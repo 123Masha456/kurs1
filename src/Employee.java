@@ -2,7 +2,7 @@ public class Employee {
     private String name;
     private String lastName;
     private String patronymic;
-    private String fullName = name + lastName + patronymic;
+
 
     private int department;
     private float salary;
@@ -28,9 +28,8 @@ public class Employee {
     public String patronymic(){
         return this.patronymic;
     }
-    public String fullName(){
-        return this.fullName;
-    }
+
+
     public int getDepartment() {
         return this.department;
     }
@@ -38,9 +37,8 @@ public class Employee {
     public float getSalary() {
         return this.salary;
     }
-    public String getFullName(){
-        return fullName;
-    }
+
+
 
     public int getId() {
         return id;
@@ -56,7 +54,7 @@ public class Employee {
 
 
    public String toStringFio(){
-     return "Сотрудник " + lastName + name + patronymic;
+     return "Сотрудник " + lastName + " " + name + " " + patronymic;
    }
 
 
