@@ -1,28 +1,45 @@
 public class Employee {
-    private String fullName;
+    private String name;
+    private String lastName;
+    private String patronymic;
+    private String fullName = name + lastName + patronymic;
+
     private int department;
     private float salary;
-    private static int counter = 1;
-    private final int id;
+    private static int counter;
+    private int id;
 
-    public Employee(String fullName, int department, float salary) {
+    public Employee(String lastName, String name, String patronymic, int department, float salary) {
 
-        this.fullName = fullName;
+        this.name = name;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
         this.department = department;
         this.salary = salary;
         this.id = counter++;
     }
 
-    public String getFullName() {
+    public String name() {
+        return this.name;
+    }
+    public String lastName(){
+        return this.lastName;
+    }
+    public String patronymic(){
+        return this.patronymic;
+    }
+    public String fullName(){
         return this.fullName;
     }
-
     public int getDepartment() {
         return this.department;
     }
 
     public float getSalary() {
         return this.salary;
+    }
+    public String getFullName(){
+        return fullName;
     }
 
     public int getId() {
@@ -37,9 +54,15 @@ public class Employee {
         this.salary = salary;
     }
 
-    @Override
+
+   public String toStringFio(){
+     return "Сотрудник " + lastName + name + patronymic;
+   }
+
+
+   @Override
     public String toString() {
-        return "Сотрудник " + fullName + " отдел " + department +
-                " зарплата " + salary;
+        return "Сотрудник " + lastName + name + patronymic + " отдел " + department +
+                " зарплата " + salary + " " + "id" + " " + id;
     }
 }

@@ -2,16 +2,16 @@ public class Main {
     static Employee[] Person = new Employee[10];
 
     public static void main(String[] args) {
-        Employee iii = new Employee("Иванов Иван Иванович", 1, 30000);
-        Employee ppp = new Employee("Петров Петр Петрович", 2, 40000);
-        Employee sss = new Employee("Семёнов Семён Семёнович", 3, 50000);
-        Employee mmm = new Employee("Михайлов Михайл Михайлович", 4, 60000);
-        Employee vvv = new Employee("Викторов Виктор Викторович", 5, 70000);
-        Employee abc = new Employee("Аверин Борис Семёнович", 1, 32000);
-        Employee sdf = new Employee("Сидорова Дарья Фёдоровна", 2, 42000);
-        Employee kld = new Employee("Калинина Людмила Дмитриевна", 3, 52000);
-        Employee vni = new Employee("Викторова Надежда Ивановна", 4, 62000);
-        Employee gko = new Employee("Григорьева Кристина Олеговна", 5, 72000);
+        Employee iii = new Employee("Иванов","Иван", "Иванович", 1, 30000);
+        Employee ppp = new Employee("Петров", "Петр", "Петрович", 2, 40000);
+        Employee sss = new Employee("Семёнов", "Семён", "Семёнович", 3, 50000);
+        Employee mmm = new Employee("Михайлов", "Михаил", "Михайлович", 4, 60000);
+        Employee vvv = new Employee("Викторов", "Виктор", "Викторович", 5, 70000);
+        Employee abc = new Employee("Аверин", "Борис", "Семёнович", 1, 32000);
+        Employee sdf = new Employee("Сидорова", "Дарья", "Фёдоровна", 2, 42000);
+        Employee kld = new Employee("Калинина", "Людмила", "Дмитриевна", 3, 52000);
+        Employee vni = new Employee("Викторова", "Надежда", "Ивановна", 4, 62000);
+        Employee gko = new Employee("Григорьева", "Кристина", "Олеговна", 5, 72000);
 
         Person[0] = iii;
         Person[1] = ppp;
@@ -23,20 +23,20 @@ public class Main {
         Person[7] = kld;
         Person[8] = vni;
         Person[9] = gko;
-        totalSalary();
-        personInformation();
-        personMinMoney();
-        personMaxMoney();
+        printPersonInformation();
+        printTotalAndMiddleSalary();
+        printPersonMinMoney();
+        printPersonMaxMoney();
         bil3();
     }
 
-    public static void personInformation() {
+    public static void printPersonInformation() {
         for (int i = 0; i < Person.length; i++) {
             System.out.println(Person[i].toString());
         }
     }
 
-    public static void totalSalary() {
+    public static void printTotalAndMiddleSalary() {
         float totalSalary = 0f;
         float middleMoneyMounth = 0f;
         int totalPersons = 10;
@@ -50,7 +50,8 @@ public class Main {
         }
     }
 
-    public static void personMinMoney() {
+
+    public static void printPersonMinMoney() {
         Employee min = Person[0];
         for (int i = 0; i < Person.length; i++) {
             if (Person[i].getSalary() < min.getSalary()) {
@@ -60,7 +61,7 @@ public class Main {
         System.out.println(min.getFullName() + " с минимальной зарплатой " + min.getSalary());
     }
 
-    public static void personMaxMoney() {
+    public static void printPersonMaxMoney() {
         Employee max = Person[0];
         for (int i = 0; i < Person.length; i++) {
             if (Person[i].getSalary() > max.getSalary()) {
