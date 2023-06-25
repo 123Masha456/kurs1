@@ -22,13 +22,14 @@ public class Employee {
     public String name() {
         return this.name;
     }
-    public String lastName(){
+
+    public String lastName() {
         return this.lastName;
     }
-    public String patronymic(){
+
+    public String patronymic() {
         return this.patronymic;
     }
-
 
     public int getDepartment() {
         return this.department;
@@ -37,8 +38,6 @@ public class Employee {
     public float getSalary() {
         return this.salary;
     }
-
-
 
     public int getId() {
         return id;
@@ -52,13 +51,11 @@ public class Employee {
         this.salary = salary;
     }
 
+    public String toStringFio() {
+        return "Сотрудник " + lastName + " " + name + " " + patronymic;
+    }
 
-   public String toStringFio(){
-     return "Сотрудник " + lastName + " " + name + " " + patronymic;
-   }
-
-
-   @Override
+    @Override
     public String toString() {
         return "Сотрудник " + lastName + name + patronymic + " отдел " + department +
                 " зарплата " + salary + " " + "id" + " " + id;
